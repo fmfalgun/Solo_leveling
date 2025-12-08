@@ -8,4 +8,10 @@ A simple repository where I store my learning notes, topic breakdowns, and solut
 
 ## Topics
 - A collection of topic-wise notes I create to understand concepts in depth.
+- Here we are having following files for now:
+  ├── AI_Algo.md
+  ├── CPP-Programming-Topics.md
+  ├── C-Programming-Topics.md
+  ├── cybersecurity_algorithms.md
+  └── security-algorithms-guide.md
 
