@@ -385,15 +385,24 @@ class MultiModelAnalyzer:
         
         X_scaled = self.scaler.fit_transform(X)
         
-        # Prepare sequences with padding for ALL flows
+        # Prepare sequences - ensure we have data for LSTM/TCN
         X_seq_all = []
-        for seq in sequences:
-            if len(seq) > 0:
+        for i, seq in enumerate(sequences):
+            if isinstance(seq, np.ndarray) and seq.shape == (10, 5):
                 X_seq_all.append(seq)
-            else:
-                # Create dummy sequence for flows without enough packets
-                X_seq_all.append(np.zeros((10, 5)))
-        X_seq_all = np.array(X_seq_all) if X_seq_all else np.array([])
+            elif len(seq) > 0:
+                # Convert to proper shape if needed
+                seq_arr = np.array(seq)
+                if seq_arr.shape == (10, 5):
+                    X_seq_all.append(seq_arr)
+                else:
+                    # Pad or truncate to (10, 5)
+                    padded = np.zeros((10, 5))
+                    padded[:min(len(seq_arr), 10)] = seq_arr[:min(len(seq_arr), 10)]
+                    X_seq_all.append(padded)
+        
+        # If we still don't have enough sequences, this is the issue
+        X_seq_all = np.array(X_seq_all) if len(X_seq_all) >= 10 else np.array([])
         
         # Train models
         print("[1/6] Isolation Forest...")
