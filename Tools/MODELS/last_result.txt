@@ -1,0 +1,21 @@
+[DEBUG 07:09:54] Packets: 5,661 | Active Flows: 0 | Processed: 0 | Models: ✗ Training...
+
+[DEBUG 07:10:01] Packets: 5,673 | Active Flows: 0 | Processed: 0 | Models: ✗ Training...
+^C
+
+[*] Shutting down gracefully...
+
+[+] Capture stopped. Total packets: 0
+[+] Monitor mode disabled on wlan0
+
+======================================================================
+FINAL ANALYSIS SUMMARY
+======================================================================
+Total Packets Captured: 5,695
+Total Flows Processed: 0
+Active Flows at End: 0
+Models Trained: No
+Parallel Processing: Disabled
+======================================================================
+
+
