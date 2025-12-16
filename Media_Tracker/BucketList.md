@@ -2,11 +2,12 @@
 
 _Auto-generated from YAML entries_
 
-_Last updated: 2025-12-16 15:57:33_
+_Last updated: 2025-12-16 16:07:16_
 
 | ID | Title | Type | Category | Genres | Author / Director | Consumed | Completed | Rating |
 |----|-------|------|----------|--------|-------------------|----------|------------|--------|
 | AOT | Attack on Titan | Anime | Seinen | Action, Dark Fantasy, Drama | Hajime Isayama | Yes | Yes | 9.2 |
+| FRN | Frieren: Beyond Journey's End | Anime | Fantasy | Fantasy, Slice of Life | Kanehito Yamada | Yes | No | 9.0 |
 | BRSK | Berserk | Manga | Seinen | Dark Fantasy, Psychological | Kentaro Miura | Yes | No | 9.8 |
 | INTST | Interstellar | Movie | Sci-Fi | Science Fiction, Space, Drama | Jonathan Nolan | Yes | Yes | 9.4 |
 | MT | Mushoku Tensei | Novel_Manga | Isekai | Fantasy, Drama | Rifujin na Magonote | Yes | Yes | 8.9 |
