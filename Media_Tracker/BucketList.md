@@ -2,7 +2,7 @@
 
 _Auto-generated from YAML entries_
 
-_Last updated: 2025-12-16 15:49:28_
+_Last updated: 2025-12-16 15:57:33_
 
 | ID | Title | Type | Category | Genres | Author / Director | Consumed | Completed | Rating |
 |----|-------|------|----------|--------|-------------------|----------|------------|--------|
