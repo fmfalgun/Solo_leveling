@@ -1,16 +1,36 @@
 #!/bin/bash
+set -e
 
-TEMPLATE_DIR="Templates"
+ROOT_DIR="$(git rev-parse --show-toplevel)"
+TEMPLATE_DIR="$ROOT_DIR/Media_Tracker/Templates"
 
-for file in $(git diff --cached --name-only --diff-filter=A | grep '\.yaml$'); do
+new_files=$(git diff --cached --name-only --diff-filter=A | grep '\.yaml$' || true)
+
+for file in $new_files; do
+  case "$file" in
+    Media_Tracker/Anime/*)
+      tpl="$TEMPLATE_DIR/anime_template.yaml"
+      ;;
+    Media_Tracker/Manga/*)
+      tpl="$TEMPLATE_DIR/manga_template.yaml"
+      ;;
+    Media_Tracker/Movies/*)
+      tpl="$TEMPLATE_DIR/movie_template.yaml"
+      ;;
+    Media_Tracker/Novels_Manga/*)
+      tpl="$TEMPLATE_DIR/novel_manga_template.yaml"
+      ;;
+    Media_Tracker/Novels_Normal/*)
+      tpl="$TEMPLATE_DIR/novel_normal_template.yaml"
+      ;;
+    *)
+      continue
+      ;;
+  esac
+
   if [ ! -s "$file" ]; then
-    case "$file" in
-      Anime/*) cp "$TEMPLATE_DIR/anime_template.yaml" "$file" ;;
-      Manga/*) cp "$TEMPLATE_DIR/manga_template.yaml" "$file" ;;
-      Movies/*) cp "$TEMPLATE_DIR/movie_template.yaml" "$file" ;;
-      Novels_Manga/*) cp "$TEMPLATE_DIR/novel_manga_template.yaml" "$file" ;;
-      Novels_Normal/*) cp "$TEMPLATE_DIR/novel_normal_template.yaml" "$file" ;;
-    esac
+    echo "[HOOK] Populating $file from $(basename "$tpl")"
+    cp "$tpl" "$file"
     git add "$file"
   fi
 done
