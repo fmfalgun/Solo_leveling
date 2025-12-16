@@ -1,0 +1,31 @@
+id: OP
+title: One Piece
+type: Manga
+category: 
+genres: []
+author: Eiichiro Oda
+
+status:
+  consumed: false
+  completed: false
+  bucketlist: true
+
+dates:
+  start_date: "July 22, 1997"
+  last_update: "December 14 2025"
+
+volumes_seasons:
+  total: 113
+  ongoing: "113 - The Birth of Loki"
+  last_known: "112 - The Harley"
+
+adaptation:
+  anime_exists: true
+  studio: [Toei]
+  movies_exist: false
+  movie_count: 15
+
+meta:
+  rating: 9.2
+  notes: "YAML-only entry"
+
