@@ -1,0 +1,32 @@
+Exercise 2.15: Which of the following definitions, if any, are invalid? Why?
+(a) int ival = 1.01; (b) int &rval1 = 1.01;
+(c) int &rval2 = ival; (d) int &rval3;
+
+my Answer: b (must be allocated to variable not value) and d (must allocate some variable's address)
+correct explaination: b (reference to temprory) and d (reference to lvalue)
+
+Exercise 2.16: Which, if any, of the following assignments are invalid? If they are
+valid, explain what they do.
+int i = 0, &r1 = i; double d = 0, &r2 = d;
+(a) r2 = 3.14159; (b) r2 = r1;
+(c) i = r2; (d) r1 = d;
+
+my Answer: 
+	a - invalid (must be some variable)
+	b - value (value of addr at r1 is assigned to r2)
+	c - valid (address can be assign to int)
+	d - invalid (address must be point to int variable only)
+
+gpt answer: 
+	a - valid (Assigns 3.14159 to d through r2)
+	b - valid (r1 (int) is converted to double.)
+	c - valid (r2 (double) converted to int.)
+	d - valid (d converted to int.)
+
+Exercise 2.17: What does the following code print?
+int i, &ri = i;
+i = 5; ri = 10;
+std::cout << i << " " << ri << std::endl;
+
+my Answer: 5 <random value>
+gpt Answer: 10 10
