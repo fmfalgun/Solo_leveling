@@ -1,0 +1,70 @@
+Exercise 2.19: Explain the key differences between pointers and references.
+
+My Answer: pointers start with * stores address of some variable
+	whereas references refer to the address pointers saves.
+
+gpt answer: 
+
+Pointers and references are both used to indirectly access objects in C++, but they differ in behavior, flexibility, and typical use cases.
+
+1. Definition and Initialization
+
+Pointer: A pointer is a variable that stores the address of another object.
+It can be declared without initialization and later assigned an address.
+
+Reference: A reference is an alias (another name) for an existing object.
+It must be initialized at the time of declaration and cannot exist without referring to an object.
+
+2. Rebinding Capability
+
+Pointer: Can be reassigned to point to different objects during its lifetime.
+
+Reference: Once bound to an object, it cannot be rebound to refer to another object.
+
+3. Nullability
+
+Pointer: Can be set to nullptr, meaning it points to no object.
+
+Reference: Cannot be null; it must always refer to a valid object.
+
+4. Access Syntax
+
+Pointer: Requires explicit dereferencing (*) to access the object it points to.
+
+Reference: Accessed just like a normal variable; no dereferencing syntax is needed.
+
+5. Level of Indirection
+
+Pointer: Is an object itself with its own memory address and size.
+
+Reference: Is not a separate object; it acts as an alternative name for the original object.
+
+6. Typical Use Cases
+
+Pointers:
+
+Dynamic memory management
+
+Data structures (linked lists, trees)
+
+Optional ownership (nullptr allowed)
+
+References:
+
+Function parameters and return values
+
+Enforcing non-null, always-valid access
+
+Cleaner and safer syntax
+
+Summary Table
+Feature	Pointer	Reference
+Initialization	Optional	Mandatory
+Can be null	Yes (nullptr)	No
+Rebinding allowed	Yes	No
+Syntax to access	*ptr	Direct variable access
+Separate object	Yes	No (alias only)
+
+In short:
+Use pointers when you need flexibility (reassignment, nullability).
+Use references when you want safer, cleaner access to an existing object that must always be valid.
