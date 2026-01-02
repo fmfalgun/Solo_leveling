@@ -1,0 +1,29 @@
+Exercise 2.27: Which of the following initializations are legal? Explain why.
+	(a) int i = -1, &r = 0; 
+	(b) int *const p2 = &i2;
+	(c) const int i = -1, &r = 0; 
+	(d) const int *const p3 = &i2;
+	(e) const int *p1 = &i2; 
+	(f) const int &const r2;
+	(g) const int i2 = i, &r = i;
+
+My answer: 
+	a - i allowed coz int can be negative, but address can't be zero
+	b - correct pointer constantly pointing to same location
+	c - i allowes coz constant int can be negative but address can't be zero
+	d - illegal, what is const int const* ?!
+	e - legal, pointer contant pointing to integer
+	f - illegal, what is const int &const ?!
+	g - legal, contant pointers were initialized
+
+chatgpt answer:
+	| Item | Legal? | Reason                                        |
+	| ---- | ------ | --------------------------------------------- |
+	| (a)  | ❌      | Non-const reference to literal                |
+	| (b)  | ✅      | Const pointer initialized correctly           |
+	| (c)  | ✅      | Const reference can bind to literal           |
+	| (d)  | ✅      | Const pointer to const int                    |
+	| (e)  | ✅      | Pointer to const int                          |
+	| (f)  | ❌      | References can’t be `const` & must initialize |
+	| (g)  | ❌      | Non-const reference to const object           |
+
