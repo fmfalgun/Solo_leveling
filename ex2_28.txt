@@ -1,0 +1,15 @@
+Exercise 2.28: Explain the following definitions. Identify any that are illegal.
+    (a) int i, *const cp; (b) int *p1, *const p2;
+    (c) const int ic, &r = ic; (d) const int *const p3;
+    (e) const int *p;
+
+my answer: everyone is legal
+Chatgpt answer: 
+
+| Declaration                  | Meaning                    | Legal? | Reason                        |
+| ---------------------------- | -------------------------- | ------ | ----------------------------- |
+| (a) `int i, *const cp;`      | const pointer to int       | ❌      | const pointer not initialized |
+| (b) `int *p1, *const p2;`    | p2 is const pointer        | ❌      | const pointer not initialized |
+| (c) `const int ic, &r = ic;` | const int and reference    | ❌      | const int not initialized     |
+| (d) `const int *const p3;`   | const pointer to const int | ❌      | const pointer not initialized |
+| (e) `const int *p;`          | pointer to const int       | ✅      | pointer itself is not const   |
